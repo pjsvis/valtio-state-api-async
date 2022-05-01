@@ -1,20 +1,14 @@
+import { removeSpaces } from "./string-helpers";
+
 const delay = (time: number) => {
   return new Promise((resolve) => setTimeout(resolve, time));
 };
 
-const strAnswers: string[] = ["forty two", "fortytwo"];
-
-const removeSpaces = (answer: string) => {
-  return answer.replace(" ", "");
-};
+const strAnswers: string[] = ["42", "fortytwo"];
 
 const getValidityAsync = async (answer: unknown) => {
   await delay(500);
-
-  if (typeof answer === "string" && answer === "42") {
-    return true;
-  }
-  if (typeof answer === "string" && strAnswers.includes(answer.toLowerCase())) {
+  if (typeof answer === "string" && removeSpaces(answer) === "42") {
     return true;
   }
   if (

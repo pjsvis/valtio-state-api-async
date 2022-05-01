@@ -10,10 +10,8 @@ const removeSpaces = (answer: string) => {
 
 const getValidityAsync = async (answer: unknown) => {
   await delay(500);
-  if (typeof answer === "number" && answer === 42) {
-    return true;
-  }
-  if (typeof answer === "string" && parseInt(answer, 10) === 42) {
+
+  if (typeof answer === "string" && answer === "42") {
     return true;
   }
   if (typeof answer === "string" && strAnswers.includes(answer.toLowerCase())) {
@@ -30,10 +28,10 @@ const getValidityAsync = async (answer: unknown) => {
 
 export interface AnswerApi {
   question: string;
-  getValidityAsync(unknown: any): void;
+  getValidityAsync(answer: unknown): void;
 }
 
 export const answerApi = {
   question: "What is the answer to Life, the Universe and Everything?",
-  getValidityAsync: (answer: any) => getValidityAsync(answer)
+  getValidityAsync: (answer: unknown) => getValidityAsync(answer)
 };

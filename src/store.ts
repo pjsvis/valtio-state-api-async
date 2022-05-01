@@ -4,7 +4,7 @@ import { answerApi } from "./deep-thought";
 
 export interface Store {
   question: string;
-  answer: any;
+  answer: unknown;
   validity: boolean;
 }
 

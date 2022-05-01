@@ -1,2 +1,2 @@
-# valtio-state-api-async
+# valtio-state-api
 Created with CodeSandbox
